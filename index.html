@@ -180,6 +180,32 @@
   .btn.primary{ background:var(--navy); color:var(--sand); }
   .btn.primary:hover{ background:var(--clay); border-color:var(--clay); }
 
+  /* ---------- series ---------- */
+  .series-label{
+    display:flex; align-items:baseline; gap:12px;
+    margin:0 0 18px;
+    font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--navy-3);
+  }
+  .series-label span{
+    font-family:var(--display); font-size:11.5px; letter-spacing:.14em; color:var(--clay-d);
+  }
+  .ticket-next{
+    margin-top:26px; background:transparent; border:1px dashed var(--hair);
+    box-shadow:none;
+  }
+  .ticket-next .stub{ background:transparent; }
+  .ticket-next .stub p{ font-size:11.5px; letter-spacing:.34em; }
+  .ticket-next .ticket-main{ padding:34px 48px 32px; }
+  .ticket-next h2{
+    font-size:clamp(25px,3.2vw,36px); margin:16px 0 8px; color:var(--navy-2);
+  }
+  .status.is-prep{ color:var(--clay-d); }
+  .status.is-prep::before{ background:var(--clay); }
+  .ticket-soon{
+    margin:26px 0 0; padding-top:18px; border-top:1px dotted var(--hair);
+    font-size:11.5px; letter-spacing:.06em; color:var(--navy-3);
+  }
+
   /* ---------- section frame ---------- */
   .sec{ padding:84px 0 0; }
   .sec-head{
@@ -476,6 +502,7 @@
   </header>
 
   <div class="ticket-wrap">
+    <p class="series-label"><span>Series</span>진행 중인 프로젝트</p>
     <article class="ticket">
       <div class="stub">
         <p>Project 01 · 여행의 이유</p>
@@ -502,6 +529,25 @@
           <a class="btn primary" href="https://hanijidori-cmd.github.io/travel-mindmap/">마인드맵 탐험하기 <span class="ar">→</span></a>
           <a class="btn" href="https://hanijidori-cmd.github.io/travel-mindmap/#index">61개 구절 전체 보기 <span class="ar">→</span></a>
         </div>
+      </div>
+    </article>
+
+    <article class="ticket ticket-next">
+      <div class="stub">
+        <p>Project 02 · 연결의 이유</p>
+      </div>
+      <div class="ticket-main">
+        <div class="ticket-top">
+          <span class="proj">Project 02 — Connect</span>
+          <span class="status is-prep">Preparing</span>
+        </div>
+        <h2>Why Do We <span>Connect?</span></h2>
+        <p class="ticket-sub">고립된 시대에 다시 잇는 공간과 공동체</p>
+        <p class="ticket-desc">
+          모든 것이 비대면과 효율로 연결되는 시대에, 왜 인간은 여전히 함께 모이고 머무를
+          물리적 공간이 필요한지 책과 사유를 모아 갑니다.
+        </p>
+        <p class="ticket-soon">서가 수집 중 · 곧 공개됩니다</p>
       </div>
     </article>
   </div>
@@ -795,7 +841,7 @@
 
   <div class="next-proj">
     <p class="np-kicker">Next Project · Coming Soon</p>
-    <p class="np-text">Project 02 · 다음 질문의 서가는 계속 이어집니다</p>
+    <p class="np-text">Project 03 · 다음 질문의 서가는 계속 이어집니다</p>
   </div>
 
   <footer>
