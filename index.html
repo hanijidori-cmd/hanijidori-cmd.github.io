@@ -157,7 +157,7 @@
   }
   .arch-stats div + div{ padding-left:22px; border-left:1px dotted var(--hair); }
   .arch-stats b{
-    display:block; font-family:var(--display); font-weight:400;
+    display:block; font-family:var(--display); font-weight:500;
     font-size:clamp(26px,3vw,34px); line-height:1; letter-spacing:-0.01em;
   }
   .arch-stats b small{ font-size:.55em; font-family:var(--sans); font-weight:400; letter-spacing:0; color:var(--navy-3); margin-left:3px; }
@@ -190,6 +190,7 @@
     display:flex; align-items:baseline; gap:16px;
     font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--navy-2);
   }
+  .sec-label span{ font-family:var(--display); font-size:12px; letter-spacing:.1em; color:var(--clay-d); }
   .sec-label i{
     font-family:var(--display); font-style:italic; font-size:15px;
     letter-spacing:.05em; color:var(--clay-d); text-transform:none;
@@ -278,7 +279,8 @@
     font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
   }
   .route-no{ color:var(--clay-d); }
-  .route-cnt{ font-family:var(--display); font-size:14px; letter-spacing:.06em; color:var(--navy-2); }
+  .route-cnt{ font-family:var(--display); font-size:14.5px; letter-spacing:.06em; color:var(--navy-2); }
+  .route-cnt i{ font-style:normal; font-family:var(--sans); font-size:10px; letter-spacing:.14em; color:var(--navy-3); margin-left:4px; }
   .route h3{
     font-family:var(--serif); font-weight:400; font-size:17.5px; line-height:1.55;
     letter-spacing:-0.015em; margin:18px 0 6px; word-break:keep-all;
@@ -292,11 +294,10 @@
     font-size:13px; line-height:1.9; font-weight:300; color:var(--navy-2);
     word-break:keep-all;
   }
+  .route-desc{ position:relative; }
   .route-desc::before{
-    content:'“'; font-family:var(--display); color:var(--clay); font-size:17px;
-    margin-right:-1px;
+    content:''; position:absolute; left:0; top:0; width:14px; height:1px; background:var(--clay);
   }
-  .route-desc::after{ content:'”'; font-family:var(--display); color:var(--clay); font-size:17px; margin-left:-2px; }
 
   /* ---------- shelf ---------- */
   .shelf{
@@ -543,42 +544,42 @@
 
     <div class="routes">
       <article class="route">
-        <div class="route-top"><span class="route-no">Route 01</span><span class="route-cnt">15</span></div>
+        <div class="route-top"><span class="route-no">Route 01</span><span class="route-cnt">15<i>구절</i></span></div>
         <h3>이동 자체가 목적 vs 목표지향적 여행</h3>
         <p class="route-en">Movement as the Destination</p>
         <p class="route-desc">도장을 찍듯 명소를 소비하는가, 걷고 움직이는 시간 자체를 즐기는가</p>
       </article>
 
       <article class="route">
-        <div class="route-top"><span class="route-no">Route 02</span><span class="route-cnt">2</span></div>
+        <div class="route-top"><span class="route-no">Route 02</span><span class="route-cnt">2<i>구절</i></span></div>
         <h3>유연한 계획 vs 경직된 계획</h3>
         <p class="route-en">The Flexible Plan</p>
         <p class="route-desc">짜여진 일정표를 따를 것인가, 길 위에서 만나는 우연에 맡길 것인가</p>
       </article>
 
       <article class="route">
-        <div class="route-top"><span class="route-no">Route 03</span><span class="route-cnt">4</span></div>
+        <div class="route-top"><span class="route-no">Route 03</span><span class="route-cnt">4<i>구절</i></span></div>
         <h3>문화적 개방성과 자기모순</h3>
         <p class="route-en">Openness and Its Contradiction</p>
         <p class="route-desc">낯선 문화를 편견 없이 받아들이면서도, 내 습관을 버리지 못하는 모순</p>
       </article>
 
       <article class="route">
-        <div class="route-top"><span class="route-no">Route 04</span><span class="route-cnt">7</span></div>
+        <div class="route-top"><span class="route-no">Route 04</span><span class="route-cnt">7<i>구절</i></span></div>
         <h3>동행 vs 고독</h3>
         <p class="route-en">Company or Solitude</p>
         <p class="route-desc">함께 나누는 기쁨과, 오직 혼자일 때만 들리는 내면의 목소리</p>
       </article>
 
       <article class="route">
-        <div class="route-top"><span class="route-no">Route 05</span><span class="route-cnt">14</span></div>
+        <div class="route-top"><span class="route-no">Route 05</span><span class="route-cnt">14<i>구절</i></span></div>
         <h3>자신으로부터 도망칠 수 없다</h3>
         <p class="route-en">Nowhere Without Yourself</p>
         <p class="route-desc">어디로 떠나든 결국 자기 자신을 데리고 간다는 묵직한 진실</p>
       </article>
 
       <article class="route">
-        <div class="route-top"><span class="route-no">Route 06</span><span class="route-cnt">4</span></div>
+        <div class="route-top"><span class="route-no">Route 06</span><span class="route-cnt">4<i>구절</i></span></div>
         <h3>노년의 여행과 죽음</h3>
         <p class="route-en">Age, and the End of the Road</p>
         <p class="route-desc">시간이 흐르고 유한함을 마주해도, 왜 우리는 끝내 떠나기를 멈추지 않는가</p>
