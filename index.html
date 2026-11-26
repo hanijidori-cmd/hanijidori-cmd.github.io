@@ -39,6 +39,8 @@
     font-family:var(--sans);
     font-weight:400;
     line-height:1.75;
+    font-variant-numeric:lining-nums;
+    font-feature-settings:"lnum" 1;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
@@ -235,7 +237,7 @@
   }
   .form-count{
     display:block; margin-top:6px;
-    font-family:var(--display); font-size:13px; letter-spacing:.14em;
+    font-family:var(--display); font-size:14.5px; letter-spacing:.1em;
     color:var(--clay-d); text-transform:uppercase;
   }
   .bar-track{ height:8px; background:var(--hair-2); position:relative; }
@@ -276,7 +278,7 @@
     font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
   }
   .route-no{ color:var(--clay-d); }
-  .route-cnt{ font-family:var(--display); font-size:12px; letter-spacing:.1em; color:var(--navy-3); }
+  .route-cnt{ font-family:var(--display); font-size:14px; letter-spacing:.06em; color:var(--navy-2); }
   .route h3{
     font-family:var(--serif); font-weight:400; font-size:17.5px; line-height:1.55;
     letter-spacing:-0.015em; margin:18px 0 6px; word-break:keep-all;
@@ -291,10 +293,10 @@
     word-break:keep-all;
   }
   .route-desc::before{
-    content:'“'; font-family:var(--display); color:var(--clay); font-size:16px;
-    margin-right:2px;
+    content:'“'; font-family:var(--display); color:var(--clay); font-size:17px;
+    margin-right:-1px;
   }
-  .route-desc::after{ content:'”'; font-family:var(--display); color:var(--clay); font-size:16px; }
+  .route-desc::after{ content:'”'; font-family:var(--display); color:var(--clay); font-size:17px; margin-left:-2px; }
 
   /* ---------- shelf ---------- */
   .shelf{
@@ -324,8 +326,8 @@
     flex:1; border-bottom:1px dotted var(--hair); transform:translateY(-4px); min-width:16px;
   }
   .shelf-count{
-    font-family:var(--display); font-size:13.5px; letter-spacing:.06em;
-    color:var(--navy-2); white-space:nowrap;
+    font-family:var(--display); font-size:15px; letter-spacing:.06em;
+    color:var(--navy); white-space:nowrap;
   }
 
   /* ---------- quotes ---------- */
@@ -342,13 +344,14 @@
   .quote-card.wide blockquote{
     font-size:clamp(21px,2.6vw,28px); line-height:1.68; max-width:900px;
   }
+  .quote-card.wide figcaption{ justify-content:flex-start; gap:22px; }
   .quote-card figcaption{
     display:flex; justify-content:space-between; align-items:baseline; gap:10px;
     font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
     color:var(--clay-d);
   }
   .quote-card figcaption .pg{
-    font-family:var(--display); font-size:12px; letter-spacing:.08em;
+    font-family:var(--display); font-size:13px; letter-spacing:.08em;
     text-transform:none; color:var(--navy-3); white-space:nowrap;
   }
   .q-note{
@@ -462,7 +465,7 @@
           <div><b>10<small>권</small></b><span>Books</span></div>
           <div><b>61<small>개</small></b><span>Passages</span></div>
           <div><b>6<small>가지</small></b><span>Questions</span></div>
-          <div><b>3<small>가지</small></b><span>Ways of Knowing</span></div>
+          <div><b>3<small>가지</small></b><span>Ways to Know</span></div>
         </div>
         <div class="card-actions">
           <a class="btn primary" href="https://hanijidori-cmd.github.io/travel-mindmap/">마인드맵 탐험하기 <span class="ar">→</span></a>
