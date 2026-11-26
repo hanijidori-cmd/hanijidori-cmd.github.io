@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 시대, 책에서 답을 찾습니다 — Hani Han Archive</title>
-<meta name="description" content="AI가 일정도 사진도 대신해 주는 시대에, 우리는 왜 여전히 몸으로 떠날까요. 고전 문학부터 현대 인지과학까지 10권의 책, 61개 구절에서 찾은 여행의 이유를 담은 아카이브.">
+<meta name="description" content="AI가 일정도 사진도 대신해 주는 시대에, 우리는 왜 여전히 몸으로 떠날까요. 고전 문학부터 현대 인지과학까지, 61개 구절에서 찾은 여행의 이유를 담은 아카이브.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI 시대, 책에서 답을 찾습니다 — Hani Han Archive">
-<meta property="og:description" content="10권의 책, 61개 구절. 여행이 던지는 6가지 질문과 3가지 앎의 양식으로 읽는 여행의 이유.">
+<meta property="og:description" content="책에서 뽑은 61개 구절. 여행이 던지는 6가지 질문과 3가지 앎의 양식으로 읽는 여행의 이유.">
 <meta property="og:locale" content="ko_KR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,6 +165,8 @@
     display:block; margin-top:9px;
     font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--navy-3);
   }
+  .arch-stats .is-ongoing b{ font-size:clamp(20px,2.2vw,24px); letter-spacing:0; }
+  .arch-stats .is-ongoing b small{ font-size:.6em; }
   .card-actions{ display:flex; flex-wrap:wrap; gap:12px; }
   .btn{
     display:inline-flex; align-items:center; gap:10px;
@@ -330,6 +332,26 @@
     font-family:var(--display); font-size:15px; letter-spacing:.06em;
     color:var(--navy); white-space:nowrap;
   }
+  .shelf-note{
+    margin:26px 0 0; font-size:11.5px; line-height:1.8; font-weight:300;
+    color:var(--navy-3); text-align:right;
+  }
+  .proj-bridge{
+    margin:44px 0 0; padding-top:18px; border-top:1px dotted var(--hair);
+    font-size:12px; line-height:1.95; font-weight:300; color:var(--navy-3);
+    word-break:keep-all;
+  }
+  .proj-bridge span{
+    margin-right:12px;
+    font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--clay-d);
+  }
+  .next-proj{ margin-top:88px; text-align:center; }
+  .next-proj .np-kicker{
+    margin:0 0 12px; font-size:9px; letter-spacing:.26em; text-transform:uppercase; color:var(--clay-d);
+  }
+  .next-proj .np-text{
+    margin:0; font-family:var(--serif); font-size:13.5px; color:var(--navy-3);
+  }
 
   /* ---------- quotes ---------- */
   .quotes{ display:grid; grid-template-columns:1fr 1fr; column-gap:72px; }
@@ -427,18 +449,19 @@
         <span class="line">AI 시대,</span>
         <span class="line">책에서 답을 찾습니다</span>
       </h1>
-      <p class="hero-en">Why do we still travel?</p>
+      <p class="hero-en">Questions we still ask ourselves</p>
     </div>
     <div class="hero-right">
       <p class="hero-lead">
-        AI가 여행 일정도 짜주고 사진도 대신 보여주는 시대에, 우리는 왜 여전히 짐을 싸서 몸으로 부딪치러 떠날까요?
-        고전 문학부터 현대 인지과학까지 <strong>10권의 책</strong>에서 찾은 답을 모았습니다.
+        AI가 매끈한 평균값과 답을 대신 내놓는 시대에, 인간이 직접 묻고 겪어야 할 질문들을 책 속에서 길어 올려 기록합니다.
+        첫 기록은 <strong>여행의 이유</strong> — 여행 문학 고전부터 현대 인지과학까지, 61개 구절에서 찾은 답입니다.
       </p>
       <div class="hero-meta">
-        <span>10권의 책</span><em>/</em>
+        <span>Project 01 · 여행의 이유</span><em>/</em>
         <span>61개 구절</span><em>/</em>
         <span>6가지 질문</span><em>/</em>
-        <span>3가지 답</span>
+        <span>3가지 답</span><em>/</em>
+        <span>계속 업데이트 중</span>
       </div>
       <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
         <defs><path id="sealPath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
@@ -465,15 +488,15 @@
         <h2>Why Do We <span>Travel?</span></h2>
         <p class="ticket-sub">문학으로 읽는 여행 마인드맵</p>
         <p class="ticket-desc">
-          몽테뉴·카뮈·메스트르·알랭 드 보통까지, 여행을 다룬 10권의 책에서 뽑은 61개 구절.
+          몽테뉴·카뮈·메스트르·알랭 드 보통까지, 여행을 다룬 여러 책에서 뽑은 61개 구절.
           여행이 던지는 6가지 질문과 3가지 앎의 양식으로 엮어, AI 시대에 사람이 직접 떠나는 일이 왜 필요한지 묻습니다.
           클릭하면 질문별로 뻗어나가는 인터랙티브 마인드맵으로 들어갑니다.
         </p>
         <div class="arch-stats">
-          <div><b>10<small>권</small></b><span>Books</span></div>
           <div><b>61<small>개</small></b><span>Passages</span></div>
           <div><b>6<small>가지</small></b><span>Questions</span></div>
           <div><b>3<small>가지</small></b><span>Ways to Know</span></div>
+          <div class="is-ongoing"><b>계속<small>추가</small></b><span>Books · Ongoing</span></div>
         </div>
         <div class="card-actions">
           <a class="btn primary" href="https://hanijidori-cmd.github.io/travel-mindmap/">마인드맵 탐험하기 <span class="ar">→</span></a>
@@ -483,10 +506,15 @@
     </article>
   </div>
 
+  <p class="proj-bridge">
+    <span>Project 01 · 여행의 이유</span>
+    아래 네 장은 이 프로젝트의 기록입니다. 책을 더 읽으면 이 기록도 함께 늘어납니다.
+  </p>
+
   <section class="sec">
     <div class="sec-head">
       <div class="sec-label"><span>01</span><i>The Answer</i></div>
-      <h2 class="sec-title">이 아카이브가 말하는 한 줄 결론</h2>
+      <h2 class="sec-title">이 프로젝트가 말하는 한 줄 결론</h2>
     </div>
 
     <p class="answer-quote">
@@ -545,7 +573,7 @@
       <h2 class="sec-title">여행이 던지는 6가지 질문</h2>
     </div>
     <p class="routes-lead">
-      같은 질문을 10권의 책이 서로 다르게 답합니다. 어느 쪽이 정답이라기보다,
+      같은 질문을 시대가 다른 책들이 서로 다르게 답합니다. 어느 쪽이 정답이라기보다,
       지금 내 여행이 어디쯤 서 있는지 보여주는 지도에 가깝습니다.
     </p>
 
@@ -597,7 +625,7 @@
   <section class="sec">
     <div class="sec-head">
       <div class="sec-label"><span>03</span><i>The Shelf</i></div>
-      <h2 class="sec-title">수록 서가 · 10권의 텍스트</h2>
+      <h2 class="sec-title">수록 서가 · 읽고 기록한 책들</h2>
     </div>
     <ol class="shelf">
       <li>
@@ -691,6 +719,7 @@
         <span class="shelf-count">22</span>
       </li>
     </ol>
+    <p class="shelf-note">책을 한 권씩 더 읽으며 서가는 계속 늘어납니다.</p>
   </section>
 
   <section class="sec">
@@ -763,6 +792,11 @@
       </figure>
     </div>
   </section>
+
+  <div class="next-proj">
+    <p class="np-kicker">Next Project · Coming Soon</p>
+    <p class="np-text">Project 02 · 다음 질문의 서가는 계속 이어집니다</p>
+  </div>
 
   <footer>
     <span>© 2026 Hani Han</span>
