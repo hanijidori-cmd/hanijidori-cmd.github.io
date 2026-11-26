@@ -4,17 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 시대, 책에서 답을 찾습니다 — Hani Han Archive</title>
+<meta name="description" content="AI 시대, 몸으로 겪는 경험의 의미를 고전과 인문·사회과학 텍스트로 기록하는 아카이브. 여행에 관한 10권 61건의 색인과 인터랙티브 마인드맵.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #F1ECE0;
     --paper-card: #EAE3D3;
+    --paper-line: #E4DCC9;
     --ink: #2B2620;
     --ink-soft: #5B5346;
+    --ink-faint: #8B8474;
     --line: #C6BDA9;
     --accent: #7A4E3A;
     --sage: #5E6E46;
+    --amber: #B5833A;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -32,7 +36,7 @@
     -webkit-font-smoothing: antialiased;
   }
   .wrap {
-    max-width: 780px;
+    max-width: 820px;
     width: 100%;
     margin: 0 auto;
     padding: 72px 28px 56px;
@@ -63,14 +67,25 @@
     font-size: 15px;
     color: var(--ink-soft);
     font-weight: 300;
-    max-width: 620px;
+    max-width: 640px;
     margin: 0;
   }
+  header .head-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-top: 18px;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+  }
+  section { margin-bottom: 52px; }
   .section-head {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 18px;
+    gap: 12px;
   }
   .section-head h2 {
     font-family: 'Noto Serif KR', serif;
@@ -80,15 +95,20 @@
     margin: 0;
     letter-spacing: 0.04em;
   }
+  .section-note {
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    letter-spacing: 0.03em;
+  }
+
+  /* ---------- PROJECT 01 card ---------- */
   .card {
     background: var(--paper-card);
     border: 1.2px solid var(--ink);
     border-radius: 8px;
-    padding: 30px 28px 26px;
+    padding: 32px 30px 28px;
     display: block;
     transition: transform 0.18s ease, box-shadow 0.18s ease;
-    text-decoration: none;
-    color: inherit;
   }
   .card:hover {
     transform: translate(-2px, -2px);
@@ -99,6 +119,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 14px;
+    gap: 10px;
   }
   .proj-label {
     font-family: 'Noto Serif KR', serif;
@@ -115,6 +136,7 @@
     color: var(--sage);
     background: var(--paper);
     font-weight: 500;
+    white-space: nowrap;
   }
   .card h3 {
     font-family: 'Noto Serif KR', serif;
@@ -123,23 +145,224 @@
     margin: 0 0 10px;
     line-height: 1.35;
   }
-  .card p {
+  .card > p {
     font-size: 14.5px;
     color: var(--ink-soft);
-    margin: 0 0 22px;
+    margin: 0 0 24px;
     font-weight: 300;
   }
-  .card-foot {
-    font-size: 13px;
+  .arch-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px dashed var(--line);
+    border-bottom: 1px dashed var(--line);
+    margin: 0 0 22px;
+  }
+  .arch-stats div {
+    padding: 14px 4px 13px;
+    text-align: center;
+    border-right: 1px dashed var(--line);
+  }
+  .arch-stats div:last-child { border-right: none; }
+  .arch-stats b {
+    display: block;
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: 700;
+    line-height: 1.1;
     color: var(--ink);
+  }
+  .arch-stats span {
+    display: block;
+    margin-top: 5px;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
     font-weight: 500;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    border: 1.2px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    transition: background 0.16s ease, color 0.16s ease;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+  .btn .arrow { font-size: 12px; opacity: 0.8; }
+
+  /* ---------- shelf ---------- */
+  .shelf {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 34px;
+    border-top: 1px solid var(--line);
+  }
+  .shelf li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 15px 2px 14px;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .shelf-no {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    color: var(--accent);
+    min-width: 20px;
+  }
+  .shelf-body { flex: 1; min-width: 0; }
+  .shelf-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.45;
+    word-break: keep-all;
+  }
+  .shelf-author {
+    margin: 2px 0 0;
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    font-weight: 300;
+    word-break: keep-all;
+  }
+  .shelf-count {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .shelf-count b {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  /* ---------- framework ---------- */
+  .framework {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 26px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+  .fw-label {
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .fw-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .fw-list li {
     display: flex;
     justify-content: space-between;
-    border-top: 1px dashed var(--line);
-    padding-top: 14px;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 13px;
+    padding: 7px 0;
+    border-bottom: 1px dotted var(--line);
+    word-break: keep-all;
   }
+  .fw-list li:last-child { border-bottom: none; }
+  .fw-list li b {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .fw-note {
+    margin: 16px 0 0;
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ---------- quotes ---------- */
+  .quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .quote-card {
+    margin: 0;
+    border: 1.1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.3);
+    padding: 22px 22px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .quote-card.wide {
+    grid-column: 1 / -1;
+    border-left-color: var(--sage);
+  }
+  .quote-card blockquote {
+    margin: 0 0 14px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    line-height: 1.66;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    word-break: keep-all;
+  }
+  .quote-card.wide blockquote { font-size: 17.5px; }
+  .quote-card figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    border-top: 1px dashed var(--line);
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  .q-book {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .quote-card.wide .q-book { color: var(--sage); }
+  .q-page {
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .q-note {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.72;
+    color: var(--ink-soft);
+    font-weight: 300;
+    word-break: keep-all;
+  }
+
   footer {
-    margin-top: 64px;
+    margin-top: 18px;
     padding-top: 20px;
     border-top: 1px solid var(--line);
     display: flex;
@@ -148,6 +371,18 @@
     gap: 10px;
     font-size: 12.5px;
     color: var(--ink-soft);
+  }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 52px 20px 44px; }
+    .card { padding: 26px 20px 22px; }
+    .shelf { grid-template-columns: 1fr; gap: 0; }
+    .framework { grid-template-columns: 1fr; gap: 20px; }
+    .quotes { grid-template-columns: 1fr; }
+    .arch-stats b { font-size: 20px; }
+    .arch-stats span { font-size: 10.5px; }
+    .card-actions .btn { flex: 1 1 100%; justify-content: center; }
+    .quote-card { padding: 18px 18px 16px; }
   }
 </style>
 </head>
@@ -159,28 +394,213 @@
       <p class="lead">
         기술이 빠르고 매끈한 평균값을 내놓을수록, 인간이 직접 묻고 몸으로 겪어야 할 질문들을 고전과 인문·사회과학 텍스트에서 길어 올려 기록합니다.
       </p>
+      <div class="head-meta">
+        <span>PROJECT 01 진행 중</span>
+        <span>10권 · 61건 색인</span>
+        <span>2026</span>
+      </div>
     </header>
 
-    <div class="section-head">
-      <h2>SERIES</h2>
-    </div>
+    <section>
+      <div class="section-head">
+        <h2>SERIES</h2>
+      </div>
 
-    <a class="card" href="https://hanijidori-cmd.github.io/travel-mindmap/">
-      <div class="card-top">
-        <span class="proj-label">PROJECT 01 · 여행의 이유</span>
-        <span class="badge">LIVE</span>
+      <article class="card">
+        <div class="card-top">
+          <span class="proj-label">PROJECT 01 · 여행의 이유</span>
+          <span class="badge">LIVE</span>
+        </div>
+        <h3>Why Do We Travel? — 문학으로 읽는 여행 마인드맵</h3>
+        <p>몽테뉴·카뮈·메스트르·비야르·보통까지, 여행을 다룬 10권의 텍스트에서 뽑은 61개 구절을 8개 키워드 축과 6개의 질문, 3가지 앎의 양식으로 엮었습니다. AI 시대에 인간이 직접 떠나는 여행이 왜 필요한지 묻는 인터랙티브 아카이브.</p>
+
+        <div class="arch-stats">
+          <div><b>10</b><span>수록 도서</span></div>
+          <div><b>61</b><span>색인 항목</span></div>
+          <div><b>6 &amp; 3</b><span>테마 · 앎의 양식</span></div>
+        </div>
+
+        <div class="card-actions">
+          <a class="btn primary" href="https://hanijidori-cmd.github.io/travel-mindmap/">마인드맵 보기 <span class="arrow">→</span></a>
+          <a class="btn" href="https://hanijidori-cmd.github.io/travel-mindmap/#index">전체 색인표 61건 <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>수록 서가 · 10권의 텍스트</h2>
+        <span class="section-note">61건의 색인</span>
       </div>
-      <h3>Why Do We Travel? — 문학으로 읽는 여행 마인드맵</h3>
-      <p>몽테뉴·카뮈·헤세·메스트르·홍진기·장 비야르의 텍스트를 8개 키워드 축으로 엮어, AI 시대에 인간에게 직접 떠나는 여행이 왜 필요한지 묻는 인터랙티브 아카이브.</p>
-      <div class="card-foot">
-        <span>8개 키워드 · 인터랙티브 마인드맵</span>
-        <span>들어가기 →</span>
+      <ol class="shelf">
+        <li>
+          <span class="shelf-no">01</span>
+          <div class="shelf-body">
+            <p class="shelf-title">몽테뉴 『에세』</p>
+            <p class="shelf-author">미셸 드 몽테뉴</p>
+          </div>
+          <span class="shelf-count"><b>7</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">02</span>
+          <div class="shelf-body">
+            <p class="shelf-title">라셀라스</p>
+            <p class="shelf-author">새뮤얼 존슨</p>
+          </div>
+          <span class="shelf-count"><b>2</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">03</span>
+          <div class="shelf-body">
+            <p class="shelf-title">싯다르타</p>
+            <p class="shelf-author">헤르만 헤세</p>
+          </div>
+          <span class="shelf-count"><b>2</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">04</span>
+          <div class="shelf-body">
+            <p class="shelf-title">르 부아야주 데흑토르</p>
+            <p class="shelf-author">프랑수아 를로르</p>
+          </div>
+          <span class="shelf-count"><b>2</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">05</span>
+          <div class="shelf-body">
+            <p class="shelf-title">카뮈 여행산문</p>
+            <p class="shelf-author">알베르 카뮈</p>
+          </div>
+          <span class="shelf-count"><b>3</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">06</span>
+          <div class="shelf-body">
+            <p class="shelf-title">문방구 에세이</p>
+            <p class="shelf-author">미상 · 동시대 에세이</p>
+          </div>
+          <span class="shelf-count"><b>4</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">07</span>
+          <div class="shelf-body">
+            <p class="shelf-title">사고외주</p>
+            <p class="shelf-author">홍진기</p>
+          </div>
+          <span class="shelf-count"><b>3</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">08</span>
+          <div class="shelf-body">
+            <p class="shelf-title">기나긴 청춘</p>
+            <p class="shelf-author">장 비야르</p>
+          </div>
+          <span class="shelf-count"><b>7</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">09</span>
+          <div class="shelf-body">
+            <p class="shelf-title">내 방 여행하는 법</p>
+            <p class="shelf-author">크사비에 드 메스트르</p>
+          </div>
+          <span class="shelf-count"><b>9</b>건</span>
+        </li>
+        <li>
+          <span class="shelf-no">10</span>
+          <div class="shelf-body">
+            <p class="shelf-title">여행의 기술</p>
+            <p class="shelf-author">알랭 드 보통</p>
+          </div>
+          <span class="shelf-count"><b>22</b>건</span>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>여섯 개의 질문 · 세 가지 앎의 양식</h2>
       </div>
-    </a>
+      <div class="framework">
+        <div>
+          <p class="fw-label">6 THEMES</p>
+          <ul class="fw-list">
+            <li><span>이동 자체가 목적 vs 목표지향적 여행</span><b>15</b></li>
+            <li><span>유연한 계획 vs 경직된 계획</span><b>2</b></li>
+            <li><span>문화적 개방성과 자기모순</span><b>4</b></li>
+            <li><span>동행 vs 고독</span><b>7</b></li>
+            <li><span>자신으로부터 도망칠 수 없다</span><b>14</b></li>
+            <li><span>노년의 여행과 죽음</span><b>4</b></li>
+          </ul>
+        </div>
+        <div>
+          <p class="fw-label">3 FORMS</p>
+          <ul class="fw-list">
+            <li><span>관찰 — 이성적 판단</span><b>16</b></li>
+            <li><span>체화된 경험 — 몸과 시간</span><b>29</b></li>
+            <li><span>조우 — 계획 없는 마주침</span><b>8</b></li>
+          </ul>
+          <p class="fw-note">한 항목이 여러 축에 걸칠 수 있습니다. 61건 중 23건이 논증의 핵심 인용으로 분류되었고, 29건이 '체화된 경험'에 놓입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>아카이브 주요 문장</h2>
+        <span class="section-note">원문이 확인된 인용</span>
+      </div>
+
+      <div class="quotes">
+        <figure class="quote-card">
+          <blockquote>“당신은 어디든 자신을 따라다니며 불평할 것이다.”</blockquote>
+          <figcaption>
+            <span class="q-book">몽테뉴 『에세』</span>
+            <span class="q-page">191쪽</span>
+          </figcaption>
+          <p class="q-note">아무리 멀리 가도 결국 자기 자신을 데리고 다닐 수밖에 없다는 스토아적 통찰. 61건 전체가 이 명제를 확인하거나 반박하는 방식으로 놓여 있습니다.</p>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“여행의 진정한 가치는 바로 두려움이다.”</blockquote>
+          <figcaption>
+            <span class="q-book">카뮈 여행산문</span>
+            <span class="q-page">92–93쪽</span>
+          </figcaption>
+          <p class="q-note">여행은 방어막을 강제로 해제해 자아를 표면으로 노출시키는 행위. 몽테뉴의 '자기 노출'을 실존적 위협으로 밀어붙인 급진적 변주입니다.</p>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“여행은 생각의 산파이다.”</blockquote>
+          <figcaption>
+            <span class="q-book">알랭 드 보통 『여행의 기술』</span>
+            <span class="q-page">78쪽</span>
+          </figcaption>
+          <p class="q-note">움직이는 비행기·배·기차만큼 내적 대화를 쉽게 이끌어내는 장소는 드물다. 사고를 AI에 맡기는 것과 정반대 방향에서, 이동이 사유의 조건이 됩니다.</p>
+        </figure>
+
+        <figure class="quote-card">
+          <blockquote>“나는 42일간의 내 방 여행을 떠났다가 돌아온 참이다.”</blockquote>
+          <figcaption>
+            <span class="q-book">메스트르 『내 방 여행하는 법』</span>
+            <span class="q-page">11쪽</span>
+          </figcaption>
+          <p class="q-note">방 안의 42일을 여행으로 규정한 서두. 이동하지 않고도 여행일 수 있는가라는 가장 강한 반례가 여기서 시작됩니다.</p>
+        </figure>
+
+        <figure class="quote-card wide">
+          <blockquote>“프랑스인이 된다는 것은 프랑스가 어떤 나라인지 안다는 뜻이니까.”</blockquote>
+          <figcaption>
+            <span class="q-book">장 비야르 『기나긴 청춘』</span>
+            <span class="q-page">63쪽</span>
+          </figcaption>
+          <p class="q-note">국가 정체성은 추상적 교육이 아니라 직접 가 보며 형성된다 — 16세 청년 전원에게 10일간의 국내 여행을 성인식 겸 법적 의무로 제도화하자는 제안. 여행 아카이브가 문학을 넘어 정책의 언어로 확장되는 지점입니다.</p>
+        </figure>
+      </div>
+    </section>
 
     <footer>
       <span>© 2026 Hani Han</span>
-      <span>AI 시대, 책에서 답을 찾습니다</span>
+      <span>AI 시대, 책에서 답을 찾습니다 · 10권 61건</span>
     </footer>
   </div>
 </body>
