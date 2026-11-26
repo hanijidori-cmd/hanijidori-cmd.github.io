@@ -403,6 +403,13 @@
     html{ scroll-behavior:auto; }
     .bar-fill{ animation:none; }
   }
+  @media print{
+    body{ background:#fff; }
+    .bar-fill{ animation:none; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .bar-track{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .ticket{ box-shadow:none; }
+    .sec{ padding-top:48px; }
+  }
 </style>
 </head>
 <body>
