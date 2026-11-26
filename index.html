@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 시대, 책에서 답을 찾습니다 — Hani Han Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F1ECE0;
+    --paper-card: #EAE3D3;
+    --ink: #2B2620;
+    --ink-soft: #5B5346;
+    --line: #C6BDA9;
+    --accent: #7A4E3A;
+    --sage: #5E6E46;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at top left, rgba(0,0,0,0.025), transparent 55%),
+      radial-gradient(ellipse at bottom right, rgba(0,0,0,0.025), transparent 55%);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.68;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 72px 28px 56px;
+    flex: 1;
+  }
+  .eyebrow {
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  header {
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 32px;
+    margin-bottom: 44px;
+  }
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: clamp(26px, 4.2vw, 36px);
+    line-height: 1.32;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  header .lead {
+    font-size: 15px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 620px;
+    margin: 0;
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+  }
+  .section-head h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin: 0;
+    letter-spacing: 0.04em;
+  }
+  .card {
+    background: var(--paper-card);
+    border: 1.2px solid var(--ink);
+    border-radius: 8px;
+    padding: 30px 28px 26px;
+    display: block;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 0 var(--ink);
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .proj-label {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+  }
+  .badge {
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 4px;
+    border: 1px solid var(--sage);
+    color: var(--sage);
+    background: var(--paper);
+    font-weight: 500;
+  }
+  .card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(21px, 3vw, 25px);
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.35;
+  }
+  .card p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+    font-weight: 300;
+  }
+  .card-foot {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed var(--line);
+    padding-top: 14px;
+  }
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Hani Han · Reading &amp; Thinking Archive</div>
+      <h1>AI 시대, 책에서 답을 찾습니다</h1>
+      <p class="lead">
+        기술이 빠르고 매끈한 평균값을 내놓을수록, 인간이 직접 묻고 몸으로 겪어야 할 질문들을 고전과 인문·사회과학 텍스트에서 길어 올려 기록합니다.
+      </p>
+    </header>
+
+    <div class="section-head">
+      <h2>SERIES</h2>
+    </div>
+
+    <a class="card" href="https://hanijidori-cmd.github.io/travel-mindmap/">
+      <div class="card-top">
+        <span class="proj-label">PROJECT 01 · 여행의 이유</span>
+        <span class="badge">LIVE</span>
+      </div>
+      <h3>Why Do We Travel? — 문학으로 읽는 여행 마인드맵</h3>
+      <p>몽테뉴·카뮈·헤세·메스트르·홍진기·장 비야르의 텍스트를 8개 키워드 축으로 엮어, AI 시대에 인간에게 직접 떠나는 여행이 왜 필요한지 묻는 인터랙티브 아카이브.</p>
+      <div class="card-foot">
+        <span>8개 키워드 · 인터랙티브 마인드맵</span>
+        <span>들어가기 →</span>
+      </div>
+    </a>
+
+    <footer>
+      <span>© 2026 Hani Han</span>
+      <span>AI 시대, 책에서 답을 찾습니다</span>
+    </footer>
+  </div>
+</body>
+</html>
